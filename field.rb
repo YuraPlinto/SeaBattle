@@ -1,4 +1,4 @@
-class Field
+﻿class Field
 =begin
 Класс Field отвечает за представление поля.
 Он инкапсулирует все методы ввода/вывода для экземпляра поля.
@@ -388,15 +388,15 @@ class Field
     return flag
   end
 
-  def printField
-    print ' '
+  def printField(space)
+    print ' '*(space+1)
     @letterToNumber.each_key do |key|
       print ' '+key
     end
     print "\n"
     i=1
     @field.each { |x|
-      print i.to_s
+      print ' '*space+i.to_s
       print' ' if i!=10#Для двузначных чисел отступ не нужен. Тут только 10 двузначное
       x.each {|y|
           case y
